@@ -26,5 +26,3 @@ dot_data = tree.export_graphviz(clf, out_file=None,
 # Draw graph
 graph = graphviz.Source(dot_data, format="png") 
 graph
-
-graph.render("decision_tree_graphivz")
