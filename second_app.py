@@ -1,3 +1,4 @@
+import streamlit as st
 from matplotlib import pyplot as plt
 from sklearn import datasets
 from sklearn.tree import DecisionTreeClassifier 
@@ -24,5 +25,4 @@ dot_data = tree.export_graphviz(clf, out_file=None,
                                 filled=True)
 
 # Draw graph
-graph = graphviz.Source(dot_data, format="png") 
-graph
+st.graphviz_chart(dot_data)

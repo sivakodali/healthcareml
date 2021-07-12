@@ -15,3 +15,11 @@ dataframe = pd.DataFrame(
 
 st.dataframe(dataframe.style.highlight_max(axis=0))
 # testing the remote
+dot_data = tree.export_graphviz(clf, out_file=None, 
+                                feature_names=columns,  
+                                class_names=iris.target_names,
+                                filled=True)
+
+# Draw graph
+graph = graphviz.Source(dot_data, format="png") 
+graph
