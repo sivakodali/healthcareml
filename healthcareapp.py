@@ -5,21 +5,21 @@ import streamlit as st
 
 st.title('Healthcare Prediction')
 # load dataset
-df = pd.read_csv("train.csv")
+# df = pd.read_csv("train.csv")
 
-# show the entire dataframe
-st.write(df)
+# # show the entire dataframe
+# st.write(df)
 
-# f-string
-st.subheader('Hospital Stay')
-stay_count = df['Stay'].value_counts()
-st.text(f'Hospital Stay frequency = {stay_count.values[1]/sum(stay_count):.2%}')
+# # f-string
+# st.subheader('Hospital Stay')
+# stay_count = df['Stay'].value_counts()
+# st.text(f'Hospital Stay frequency = {stay_count.values[1]/sum(stay_count):.2%}')
 
-# simple plotting
-fig, ax = plt.subplots(1, 2, figsize=(15, 5))
-stay_count.plot.bar(ax=ax[0])
-df['Age'].plot.hist(ax=ax[1])
-st.pyplot(fig)
+# # simple plotting
+# fig, ax = plt.subplots(1, 2, figsize=(15, 5))
+# stay_count.plot.bar(ax=ax[0])
+# df['Age'].plot.hist(ax=ax[1])
+# st.pyplot(fig)
 
 # markdown
 st.subheader('Making Prediction')
