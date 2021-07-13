@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 
-st.title('Healthcare Prediction')
+st.title('Healthcare Prediction - Patient stay in Hospital')
 # load dataset
 # df = pd.read_csv("train.csv")
 
@@ -22,6 +22,7 @@ st.title('Healthcare Prediction')
 # st.pyplot(fig)
 
 # markdown
+# markdown
 st.subheader('Making Prediction')
 st.markdown('**Please provide patient information**:')  # you can use markdown like this
 
@@ -35,16 +36,17 @@ city_code_hospital = int(st.selectbox('City code hospital:', [ 3,  5,  1,  2,  6
 hospital_region_code = st.selectbox('Hospital region code:', ['Z', 'X', 'Y'])
 available_extra_rooms = st.selectbox('Available Extra Rooms in Hospital:', [ 3,  2,  1,  4,  6,  5,  7,  8,  9, 10, 12,  0, 11, 20, 14, 21, 13, 24])
 department = st.selectbox('Department:', ['radiotherapy', 'anesthesia', 'gynecology', 'TB & Chest disease', 'surgery'])
-ward_type = st.selectbox('Ward type:', ['R', 'S', 'Q', 'P', 'T', 'U'])
+Ward_Type = st.selectbox('Ward type:', ['R', 'S', 'Q', 'P', 'T', 'U'])
 ward_facility_code = st.selectbox('Ward facility code:', ['F', 'E', 'D', 'B', 'A' ,'C'])
 bed_grade = float(st.selectbox('Bed grade:', [ 2.,  3.,  4.,  1.]))
-patientid = int(st.number_input('Patientid:', 0, 100000, 0))
+patientid = int(st.number_input('Patientid:', 0, 50000, 0))
 city_code_patient = float(st.selectbox('City code patient:', [ 7.,  8.,  2.,  5.,  6.,  3.,  4.,  1.,  9., 14., 25., 15., 12., 10., 28., 24., 23., 20., 11., 13., 21., 18., 16., 26., 27., 22., 19., 31., 34., 32., 30., 29., 37., 33., 35., 36., 38.]))
 type_of_admission = st.selectbox('Type of Admission:', ['Emergency', 'Trauma', 'Urgent'])
 severity_of_illness = st.selectbox('Severity of Illness:', ['Extreme', 'Moderate', 'Minor'])
 visitors_with_patient = int(st.number_input('Visitors with Patient:', 0, 10, 0))
 age = st.selectbox('Age:', ['51-60', '71-80', '31-40', '41-50', '81-90', '61-70', '21-30', '11-20', '0-10', '91-100'])
 admission_deposit = float(st.number_input('Admission_Deposit:', 0, 100000, 0))
+
 
 # this is how to dynamically change text
 prediction_state = st.markdown('calculating...')
@@ -56,8 +58,8 @@ patient = pd.DataFrame(
         'City_Code_Hospital': [city_code_hospital],
         'Hospital_region_code': [hospital_region_code],
         'Available Extra Rooms in Hospital': [available_extra_rooms],
-        'Department': [available_extra_rooms],
-        'Ward_Type': [ward_type],
+        'Department': [department],
+        'Ward_Type': [Ward_Type],
         'Ward_Facility_Code': [ward_facility_code],
         'Bed Grade': [bed_grade],
         'patientid': [patientid],
@@ -71,6 +73,6 @@ patient = pd.DataFrame(
 )
 y_pred = tree_clf.predict(patient)
 
-st.markdown('**Prediction Output**:') 
 msg = 'This patient is predicted to stay: '+ y_pred
+st.markdown('**Model Prediction:**:')
 prediction_state.markdown(msg)
