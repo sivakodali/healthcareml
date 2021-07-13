@@ -51,7 +51,7 @@ prediction_state = st.markdown('calculating...')
 
 patient = pd.DataFrame(
     {
-        'Hospital_code': [hospital_code[],
+        'Hospital_code': [hospital_code],
         'Hospital_type_code': [hospital_type_code],
         'City_Code_Hospital': [city_code_hospital],
         'Hospital_region_code': [hospital_region_code],
