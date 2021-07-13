@@ -71,6 +71,6 @@ patient = pd.DataFrame(
 )
 y_pred = tree_clf.predict(patient)
 
-st.title('Healthcare Prediction Rsults')
+print("\n")
 msg = 'This patient is predicted to stay: '+ y_pred
 prediction_state.markdown(msg)
