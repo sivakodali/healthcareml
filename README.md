@@ -79,7 +79,7 @@ https://team1-healthcareml.herokuapp.com/
 
 ## Credits 
  
-Mentor/Guide: &nbsp; Harry J Wang &nbsp; (http://harrywang.me/about)
+Mentor/Guide: &nbsp; Harry Wang &nbsp; (http://harrywang.me/about)
 
 ## References
 
