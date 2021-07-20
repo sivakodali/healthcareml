@@ -40,7 +40,7 @@ occasionally moved to different hospitals for each stay.
 - Being a medical/patient dataset the gender feature which is an important one is not one of the attributes captured in the dataset.
 - Although we were restricted by our dataset not including the gender of the patient, we found that most individuals are most likely women as most of patients were going into the
 gynecology department for treatment. as there was around 80% of the patients are admitted to the Gynecology department.
-- It appears like that dataset is heavily engineered as some feature combinations do not align with the medical domain obsercations. ex. length of hospital stay does not correlate with severity of admission.
+- It appears like that dataset is heavily engineered as some feature combinations do not align with the medical domain observations. ex. length of hospital stay does not correlate with severity of admission.
 - The baseline accuracy for the patient was identified to be 27.5% based on the max percentage of the patient stay across the Stay categories
 
 ## Preprocessing
@@ -56,18 +56,26 @@ gynecology department for treatment. as there was around 80% of the patients are
 ## Model Selection
 
 - Considering this to be a classification problem, Accuracy metric was identified as the driving factor among model selection.
-- The basic models like Decision Tree and Random Forest were considered for this prediction. With the pre-processing of the data and no hyper parameter tuning, the models started yielding predictions that are better than the baseline prediction. 
-- To further verify with other models, Logistic Regression model with different hperparameter settings was used for the prediction. However, none of the Logistic Regression model results were better than the results from either of the decision tree or random forest results.
-- With the solution now narrowed down to Decision tree and Random Forest models, the assocaited hyper parameters for each of the models were tuned to find the model that gave highest accuracy percentage.
+- The basic models like Decision Tree and Random Forest were considered for this prediction. With the pre-processing of the data and no hyperparameter tuning, the models started yielding predictions that are better than the baseline prediction. 
+- To further verify with other models, Logistic Regression model with different hyperparameter settings was used for the prediction. However, none of the Logistic Regression model results were better than the results from either of the decision tree or random forest results.
+- With the solution now narrowed down to Decision tree and Random Forest models, the associated hyperparameters for each of the models were tuned to find the model that gave highest accuracy percentage.
     - Decision Tree: (tree depth, quality of the split (gini, entropy) 
     - Random Forest: Number of decision trees and quality of the split (gini, entropy)
 - Based on the highest accuracy among the models, the Decision Tree model was selected as the final model for predicting the outcome surrounding the 'Stay' feature.
 
 ## Model Deployment
 
-- Once the model was tuned and trained, it was exported to a pickel file. Along with the pickle file a basic python app leveraging streamlit library is deployed to Heroku to allow for capturing the testing data that the model will be predicting on in real-time. Below is the link to the application:
+- Once the model was tuned and trained, it was exported to a pickle file. Along with the pickle file a basic python app leveraging streamlit library is deployed to Heroku to allow for capturing the testing data that the model will be predicting on in real-time. Below is the link to the application:
 
 https://team1-healthcareml.herokuapp.com/
+
+## Files
+
+- `EDA_FeatureEngineering.ipnyb`: EDA and Feature Engineering Source
+- `ModelTuning_and_Selection.ipynb`: Data pre-procesing and Model comparision and evaluation
+- `Final Model Deployment.ipnyb`: Final model implemenation
+- `healthcareapp.py`: streamlit app file
+- `Procfile` and `setup.sh`: heroku deployment files
 
 ## Team Members
 
