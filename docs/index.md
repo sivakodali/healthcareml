@@ -1,4 +1,3 @@
-# healthcareml
 This repo demonstrates how to predict the length of stay of a patient to observe if one can improve the efficiency of the healthcare management in a hospital.  The aim is to accurately predict the Length of Stay for each patient on case by case basis so that the Hospitals can use this information for optimal resource allocation and better functioning. 
 
 To predict the length of stay of an individual, we will be using a supervised classification model as the stay of an individual is given in a range of days, or discrete outputs. We will use the training data that includes the individual’s length of stay to train our model, then use k-fold validation to predict the stay of an individual from the test fold. 
