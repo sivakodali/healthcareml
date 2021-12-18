@@ -77,14 +77,6 @@ https://team1-healthcareml.herokuapp.com/
 - `healthcareapp.py`: streamlit app file
 - `Procfile` and `setup.sh`: heroku deployment files
 
-## Team Members
-
-- Greg Neal
-- Hemant Kini
-- Lucas Freire
-- Siva Kodali
-- Vivek Dave
-
 ## Credits 
  
 Mentor/Guide: &nbsp; Harry Wang &nbsp; (http://harrywang.me/about)
